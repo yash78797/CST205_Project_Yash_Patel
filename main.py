@@ -1,7 +1,6 @@
 # Class: CST 205 - Multimedia Design & Programming
 # Title: main.py
-# Abstract: The purpose of this web based app is to
-add filter effects on images.
+# Abstract: The purpose of this web based app is to add filter effects on images.
 # Authors: Yash Patel
 # Date Created: 05/19/2022
 
