@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Yash Site | Image</title>
+        <style>
+            #image {
+                max-height: 800px;
+                max-width: 1000px;
+            }
+            #main-div {
+                width: 50%;
+                margin: 10px auto;
+                align-content: center;
+                text-align: center;
+            }
+            img {
+                margin: 0 auto;
+            }
+        </style>
+              <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon.jpg')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/favicon.jpg')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+    
+    </head>
+    <body>
+        {% include 'navigation.html' %}
+        <div id="main-div">
+            <img id="image" src="{{ image_info['url'] }}" alt="{{ image_info['title'] }}">
+            <div class="card" style="margin: 20px; padding: 10px">
+                <form method="POST" action="" role="form" class="form form-horizontal">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group mb-3">
+                        {{ form.effect.label }}
+                        {{ form.effect(class_="form-select") }}
+                    </div>
+                    <button class="btn btn-primary">Apply</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Yash Site | Upload</title>
+          <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon.jpg')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/favicon.jpg')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+    
+    </head>
+    <body class="bg-light">
+    
+        {% include 'navigation.html' %}
+        
+
+            <section id="hero">
+                <div class="hero-container">
+                  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                      <!-- Slide 1 -->
+                      <div class="carousel-item active" style="background: url({{url_for('static', filename='assets/img/slide/slide-1.jpg')}})">
+                        <div class="carousel-container">
+                          <div class="carousel-content">
+                            <br> 
+                            <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Yash Project</span></h2>
+                            <p class="animate__animated animate__fadeInUp">You can upload image here and get back in the search results.</p>
+                            <form method="POST" action="" enctype="multipart/form-data">
+                                {{ form.csrf_token }}
+                                {{ form.image_file.label }}
+                                {{ form.image_file() }}
+                                <br>
+                                {{ form.image_title.label }}
+                                {{ form.image_title() }}
+                                <br>
+                                {{ form.image_tags.label }}
+                                {{ form.image_tags }}
+                                <br>
+                                {{ form.image_effect.label }}
+                                {{ form.image_effect() }}
+                                <br>
+                                <input type="submit" value="Upload" class="btn-get-started animate__animated animate__fadeInUp">
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+    </body>
+</html>
